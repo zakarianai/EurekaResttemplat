@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a class="navbar-logo" href="/">MyApp</a>
+    <ul [class.active]="isMenuOpen" class="navbar-links">
+      <li><a routerLink="/client">Client</a></li>
+      <li><a routerLink="/voiture">Voiture</a></li>
+      <li><a routerLink="/reservervoiture">Réserver</a></li>
+      <li><a routerLink="/clientavecvoiture">Client avec Voiture</a></li>
+    </ul>
+    <div class="navbar-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

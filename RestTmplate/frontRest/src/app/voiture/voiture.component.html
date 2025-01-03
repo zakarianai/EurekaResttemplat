@@ -1,0 +1,56 @@
+<p>voiture works!</p>
+<div class="container">
+    <h1>Gestion des Voitures</h1>
+  
+    <!-- Formulaire pour ajouter une voiture -->
+    <form (ngSubmit)="addCar()" class="car-form">
+      <div class="form-group">
+        <label for="matricule">Matricule</label>
+        <input id="matricule" type="text" [(ngModel)]="newCar.matricule" name="matricule" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="marque">Marque</label>
+        <input id="marque" type="text" [(ngModel)]="newCar.marque" name="marque" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="model">Modèle</label>
+        <input id="model" type="text" [(ngModel)]="newCar.model" name="model" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="id_client">ID Client</label>
+        <input id="id_client" type="number" [(ngModel)]="newCar.id_client" name="id_client" required />
+      </div>
+  
+      <button type="submit" [disabled]="isSubmitting"  class="btn btn-primary">Ajouter Voiture</button>
+    </form>
+  
+    <h2>Liste des Voitures</h2>
+    <table class="car-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Matricule</th>
+          <th>Marque</th>
+          <th>Modèle</th>
+          <th>ID Client</th>
+          <th>Nom Client</th>
+          <th>Âge Client</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+          <td>{{ car.id }}</td>
+          <td>{{ car.matricule || 'N/A' }}</td>
+          <td>{{ car.marque || 'N/A' }}</td>
+          <td>{{ car.model || 'N/A' }}</td>
+          <td>{{ car.id_client || 'N/A' }}</td>
+          <td>{{ car.client?.nom || 'N/A' }}</td>
+          <td>{{ car.client?.age || 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

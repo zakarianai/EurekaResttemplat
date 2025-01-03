@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Gateway
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "http://localhost:4200"
+            allowed-methods: "GET, POST, PUT, DELETE"
+            allowed-headers: "*"
+            allow-credentials: true
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: localhost
+
